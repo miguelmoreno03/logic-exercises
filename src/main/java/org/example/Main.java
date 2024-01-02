@@ -29,5 +29,12 @@ public class Main {
         } catch (MalformedURLException e) {
             throw new RuntimeException(e);
         }
+        //reverse strings
+        System.out.println(LogicExercises.RevertStrings.reverseStrings("hello world"));
+        //counting words
+        System.out.println(LogicExercises.CountingWords.countingWords("hola que tal. que? me dijiste algo?", "que"));
+        //decimal to binary
+        System.out.println(LogicExercises.DecimalToBinary.decimalToBinary(123));
+
     }
 }

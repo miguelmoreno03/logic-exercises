@@ -3,10 +3,10 @@ package org.example;
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
-import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.net.URL;
 import java.util.Arrays;
+import java.util.Scanner;
 
 public class LogicExercises {
     public LogicExercises() {
@@ -178,6 +178,14 @@ public class LogicExercises {
     }
 
     public static class ImageRatio {
+        /*
+         * Crea un programa que se encargue de calcular el aspect ratio de una
+         * imagen a partir de una url.
+         * - Url de ejemplo:
+         *   https://raw.githubusercontent.com/mouredevmouredev/master/mouredev_github_profile.png
+         * - Por ratio hacemos referencia por ejemplo a los "16:9" de una
+         *   imagen de 1920*1080px.
+         */
         public static String imageRatio(URL url) {
             try {
                 BufferedImage image = ImageIO.read(url);
@@ -202,4 +210,54 @@ public class LogicExercises {
         }
 
     }
+    public static class RevertStrings{
+        /*
+     * Crea un programa que invierta el orden de una cadena de texto
+     * sin usar funciones propias del lenguaje que lo hagan de forma automática.
+     * - Si le pasamos "Hola mundo" nos retornaría "odnum aloH"
+     */
+        public static String reverseStrings(String string){
+         char[] stringsLetters = string.toCharArray();
+         StringBuilder reverseString = new StringBuilder();
+         for (int i=stringsLetters.length-1;i>=0;i--){
+             reverseString.append(stringsLetters[i]);
+         }
+        return reverseString.toString();
+        }
+    }
+    public static class CountingWords{
+        /*
+         * Crea un programa se encargue de transformar un número
+         * decimal a binario sin utilizar funciones propias del lenguaje que lo hagan directamente.
+         */
+        public static int countingWords(String string,String keyWord){
+             string = string.replaceAll("[^a-zA-Z0-9\\s]", "");
+            int count =0;
+            String[] words= string.split(" ");
+            for(String word:words){
+                if (word.equals(keyWord))
+                    count++;
+            }
+           return count;
+        }
+    }
+    public static class DecimalToBinary{
+        /*
+         * Crea un programa se encargue de transformar un número
+         * decimal a binario sin utilizar funciones propias del lenguaje que lo hagan directamente.
+         */
+     public static long decimalToBinary (long number){
+         StringBuilder string = new StringBuilder();
+         while(number>1){
+             string.append(number%2);
+             number=number/2;
+             if (number==1){
+                 string.append(1);
+             }
+         }
+
+         return Integer.parseInt(string.reverse().toString());
+     }
+    }
+
 }
